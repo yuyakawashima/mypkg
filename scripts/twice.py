@@ -74,7 +74,6 @@ while not rospy.is_shutdown():
     elif n == 100:
         break
     rate.sleep()
-
 c_max = max(c_1, c_2, c_3, c_4, c_5, c_6, c_7)
 if c_max == c_1:
     print("運勢は"+"\033[33m大吉\033[0m"+"です")

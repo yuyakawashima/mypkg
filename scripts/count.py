@@ -18,6 +18,21 @@ s = 0
 num = 0
 num_max = 100
 pub.publish(n)
+
+while True:
+    num_max = input('50以上の数字を入力:')
+
+    try:
+        int(num_max)
+    except ValueError:
+        print("\033[31m数字入れてくれ\033[0m")
+        continue
+
+    if int(num_max) < 50:
+        print("\033[31m50以上入れてくれ\033[0m")
+    else:
+        break
+
 while not rospy.is_shutdown():
     n = random.randint(1,7)
     s += n
@@ -26,6 +41,7 @@ while not rospy.is_shutdown():
     if int(num_max) == int(num):      
         pub.publish(n)
         n = 100
+        num = 0
         rospy.sleep(2)
         pub.publish(n)
         break
