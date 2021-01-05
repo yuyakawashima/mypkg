@@ -38,12 +38,11 @@ while not rospy.is_shutdown():
     s += n
     num = num + 1
     print(num,"回目:",n)
+    pub.publish(n)
     if int(num_max) == int(num):      
-        pub.publish(n)
         n = 100
         num = 0
         rospy.sleep(2)
         pub.publish(n)
         break
-    pub.publish(n)
     rate.sleep()
