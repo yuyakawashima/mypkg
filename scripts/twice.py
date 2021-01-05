@@ -31,49 +31,38 @@ rate = rospy.Rate(15)
 while not rospy.is_shutdown():
     if n == 1:
         word = "▂▅▇█▓▒(’ω’)▒▓█▇▅▂"
-        pub.publish(n)
-        n = 0
         c_1 += 1
         print("\033[33m" + word + "\033[0m")
     elif n == 2:
         word = "─=≡Σ((( つ•̀ω•́)つ"
-        pub.publish(n)
-        n = 0
         c_2 += 1
         print("\033[36m" + word + "\033[0m")
     elif n == 3:
         word = "(っ’ヮ’c)"
-        pub.publish(n)
-        n = 0
         c_3 += 1
         print("\033[32m" + word + "\033[0m")
     elif n == 4:
         word = "＼(^ω^)／"
-        pub.publish(n)
-        n = 0
         c_4 += 1
         print("\033[37m" + word + "\033[0m")
     elif n == 5:
         word = "(#╹◡╹)"
-        pub.publish(n)
-        n = 0
         c_5 += 1
         print("\033[35m" + word + "\033[0m")
     elif n == 6:
         word = "(ﾉД`)"
-        pub.publish(n)
-        n = 0
         c_6 += 1
         print("\033[31m" + word + "\033[0m")
     elif n == 7:
         word = "ﾟ(ﾟ´Д｀ﾟ)ﾟ。"    
-        pub.publish(n)
-        n = 0
         c_7 += 1
         print("\033[34m" + word + "\033[0m")
     elif n == 100:
         break
+    pub.publish(n)
+    n = 0
     rate.sleep()
+
 c_max = max(c_1, c_2, c_3, c_4, c_5, c_6, c_7)
 if c_max == c_1:
     print("運勢は"+"\033[33m大吉\033[0m"+"です")
