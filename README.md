@@ -13,7 +13,8 @@ $ git clone https://github.com/yuyakawashima/mypkg.git
 $ cd mypkg/scripts
 $ chmod +x count.py
 $ chmod +x twice.py
-$ cd ..
+$ cd
+$ cd catkin_ws
 $ catkin_make
 $ source ~/.bashrc
 ```
@@ -27,6 +28,8 @@ $ source ~/.bashrc
 端末1に「Ctrl + c」を入力する．
 
 ## 内容
-①　1～7の内ランダムな整数を100個生成する．  
-②　PubからSubに通信している間，渡された値に応じて顔文字を出力．  
-③　渡された値の内，最も多かったものを選び，運勢を出力する．  
+①　1～7の内ランダムな整数を指定した数だけ生成する．  
+②　通信している間，渡された値に応じて顔文字を出力．  
+③　渡された値の内，最も多かったものを選び，それに応じた運勢を出力する．  
+## 実行動画
+https://www.youtube.com/watch?v=vZpmDJJ3Qio
