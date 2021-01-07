@@ -23,7 +23,7 @@ while True:
     try:
         int(num_max)
     except ValueError:
-        print("\033[31m数字入を入れてくれ\033[0m")
+        print("\033[31m数字を入れてくれ\033[0m")
         continue
 
     if int(num_max) < 50:
