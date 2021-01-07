@@ -2,12 +2,12 @@
 
 """
 BSD 3-Clause License
-
 Copyright (c) 2020, Yuya Kawashima and Ryuichi Ueda
 All rights reserved.
 """ 
 import rospy
 from std_msgs.msg import Int32
+from std_msgs.msg import String
 
 c_1 = 0
 c_2 = 0
@@ -26,40 +26,41 @@ def cb(message):
 
 rospy.init_node('twice')
 sub = rospy.Subscriber('count_up', Int32, cb)
-pub = rospy.Publisher('twice', Int32, queue_size=1)
+pub = rospy.Publisher('twice', String, queue_size=1)
 rate = rospy.Rate(15)
+
 while not rospy.is_shutdown():
     if n == 1:
         word = "▂▅▇█▓▒(’ω’)▒▓█▇▅▂"
         c_1 += 1
-        print("\033[33m" + word + "\033[0m")
+        print("------------>"+"\033[33m" + word + "\033[0m")
     elif n == 2:
         word = "─=≡Σ((( つ•̀ω•́)つ"
         c_2 += 1
-        print("\033[36m" + word + "\033[0m")
+        print("------------>"+"\033[36m" + word + "\033[0m")
     elif n == 3:
         word = "(っ’ヮ’c)"
         c_3 += 1
-        print("\033[32m" + word + "\033[0m")
+        print("------------>"+"\033[32m" + word + "\033[0m")
     elif n == 4:
         word = "＼(^ω^)／"
         c_4 += 1
-        print("\033[37m" + word + "\033[0m")
+        print("------------>"+"\033[37m" + word + "\033[0m")
     elif n == 5:
         word = "(#╹◡╹)"
         c_5 += 1
-        print("\033[35m" + word + "\033[0m")
+        print("------------>"+"\033[35m" + word + "\033[0m")
     elif n == 6:
         word = "(ﾉД`)"
         c_6 += 1
-        print("\033[31m" + word + "\033[0m")
+        print("------------>"+"\033[31m" + word + "\033[0m")
     elif n == 7:
         word = "ﾟ(ﾟ´Д｀ﾟ)ﾟ。"    
         c_7 += 1
-        print("\033[34m" + word + "\033[0m")
+        print("------------>"+"\033[34m" + word + "\033[0m")
     elif n == 100:
         break
-    pub.publish(n)
+    pub.publish(word)
     n = 0
     rate.sleep()
 

@@ -2,7 +2,6 @@
 
 """
 BSD 3-Clause License
-
 Copyright (c) 2020, Yuya Kawashima and Ryuichi Ueda
 All rights reserved.
 """
@@ -14,7 +13,6 @@ rospy.init_node('count')
 pub = rospy.Publisher('count_up', Int32, queue_size=1)
 rate = rospy.Rate(15)
 n = random.randint(1,7)
-s = 0
 num = 0
 num_max = 100
 pub.publish(n)
@@ -31,17 +29,17 @@ while True:
     if int(num_max) < 50:
         print("\033[31m50以上の数字を入れてくれ\033[0m")
     else:
+        num_max = int(num_max) + 1
         break
 
 while not rospy.is_shutdown():
     n = random.randint(1,7)
-    s += n
-    num = num + 1
-    print(num,"回目:",n)
+    if num > 0:
+        print(num,"回目:",n)
+    num += 1
     pub.publish(n)
     if int(num_max) == int(num):      
         n = 100
-        num = 0
         rospy.sleep(2)
         pub.publish(n)
         break
