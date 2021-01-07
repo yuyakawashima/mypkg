@@ -8,19 +8,21 @@
 ## 使用道具
 ・Raspberry Pi 4 (4GB)
 ## インストール方法
-```
+```sh
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/yuyakawashima/mypkg.git
 $ cd ..
 $ catkin_make
 $ source ~/.bashrc
 ```
-bashrcに[source /opt/ros/noetic/setup.bash]が書かれていない場合，以下を実行
-```
+bashrcに  
+source /opt/ros/noetic/setup.bash  
+が書かれていない場合，以下を実行  
+```sh
 $ source /opt/ros/noetic/setup.bash
 ``` 
 ## 実行方法
-```
+```sh
 端末1$ roscore
 端末2$ rosrun mypkg twice.py
 端末3$ rosrun mypkg count.py
