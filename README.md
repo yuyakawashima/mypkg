@@ -1,35 +1,28 @@
 # ロボットシステム学課題2　～おみくじ～
-## 目的
-ROSについて学習し，ファイル間で通信する．
-## 動作環境等
-・Raspberry Pi 4  
+## 概要
+ロボットシステム学の講義で作成したROSを改造し，おみくじを作成した．
+## 動作環境
+・Raspberry Pi 4 (4GB)
 ・Ubuntu server 20.04 LTS  
 ・ROS version noetic  
-## 動作方法
-#### 1. インストールする
+## 使用道具
+・Raspberry Pi 4 (4GB)
+## インストール方法
 ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/yuyakawashima/mypkg.git
-$ cd mypkg/scripts
-$ chmod +x count.py
-$ chmod +x twice.py
-$ cd
-$ cd catkin_ws
+$ cd ..
 $ catkin_make
-$ source ~/.bashrc
+$ source /opt/ros/noetic/setup.bash
 ```
-#### 2. 実行する
+## 実行方法
 ```
 端末1$ roscore
 端末2$ rosrun mypkg twice.py
 端末3$ rosrun mypkg count.py
 ```
-#### 3. 終了時
-端末1に「Ctrl + c」を入力する．
-
-## 内容
-①　1～7の内ランダムな整数を指定した数だけ生成する．  
-②　通信している間，渡された値に応じて顔文字を出力．  
-③　渡された値の内，最も多かったものを選び，それに応じた運勢を出力する．  
+端末1に「Ctrl + c」を入力する．  
 ## 実行動画
 https://www.youtube.com/watch?v=vZpmDJJ3Qio
+## ライセンス
+BSD 3-Clause License
