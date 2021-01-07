@@ -16,7 +16,7 @@ $ catkin_make
 $ source ~/.bashrc
 ```
 bashrcに  
-source /opt/ros/noetic/setup.bash  
+**source /opt/ros/noetic/setup.bash**  
 が書かれていない場合，以下を実行  
 ```sh
 $ source /opt/ros/noetic/setup.bash
